@@ -1,4 +1,4 @@
-### tiendas.
+##################################### TIENDAS.
 GET http://localhost:8000/stores
 
 ### Obtener tienda por ID.
@@ -31,47 +31,47 @@ DELETE http://localhost:8000/stores/2
 
 
 
-##########################  Roles
+######################################  ROLES
 
 
-### Obtener todos las usuarios.
+### Obtener todos las roles.
 GET http://localhost:8000/roles
 
-### Obtener usuario por ID.
+### Obtener rol por ID.
 GET http://localhost:8000/roles/1
 
-### Crear usuario.
+### Crear roles.
 POST http://localhost:8000/roles
 Content-Type: application/json
 
 {
     "name": "Admin",
-    "description": "usuario de tienda"
+    "description": "super user"
 }
 
-### Actualizar tienda.
+### Actualizar roles.
 PUT http://localhost:8000/roles/1
 Content-Type: application/json
 
 {
     "name": "Tienda",
-    "description": ""
+    "description": "usuario de tienda"
 }
 
-### Borrar tienda.
+### Borrar roles.
 DELETE http://localhost:8000/roles/1
 
 
-##########################  products
+#########################################  PRODUCTOS
 
 
-### Obtener todos las usuarios.
+### Obtener todos las productos.
 GET http://localhost:8000/products
 
-### Obtener usuario por ID.
+### Obtener producto por ID.
 GET http://localhost:8000/products/1
 
-### Crear usuario.
+### Crear productos.
 POST http://localhost:8000/products
 Content-Type: application/json
 
@@ -81,21 +81,21 @@ Content-Type: application/json
     "quantity": 100
 }
 
-### Actualizar tienda.
+### Actualizar productos.
 PUT http://localhost:8000/products/1
 Content-Type: application/json
 
 {
-    "name": "Kevin",    
-    "password": "123445678",
-    "role": "tienda"
+    "name": "Mi nuevo libro",
+    "description": "Hans A.C.",
+    "quantity": 100
 }
 
-### Borrar tienda.
+### Borrar productos.
 DELETE http://localhost:8000/products/1
 
 
-##########################  Users
+#####################################  USUARIO
 
 
 ### Obtener todos las usuarios.
@@ -115,7 +115,7 @@ Content-Type: application/json
     "role": "1"
 }
 
-### Actualizar tienda.
+### Actualizar usuario.
 PUT http://localhost:8000/users/1
 Content-Type: application/json
 
@@ -126,5 +126,5 @@ Content-Type: application/json
     "role": "1"
 }
 
-### Borrar tienda.
+### Borrar usuario.
 DELETE http://localhost:8000/users/1
