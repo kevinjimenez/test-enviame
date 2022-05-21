@@ -22,7 +22,7 @@ class SQLAlchemyStoresRepository():
             Column("name", String(50)),
             Column("description", String(50)),
             Column("address", String(50)),
-            Column("store", String(50)),
+            Column("user", String(50)),
             Column("created_at", TIMESTAMP),
             Column("updated_at", TIMESTAMP),
             Column("deleted_at", TIMESTAMP, nullable = True),
