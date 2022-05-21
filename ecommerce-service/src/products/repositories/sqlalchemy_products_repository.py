@@ -1,16 +1,10 @@
 from sqlalchemy import Table, Column, Integer, String, ForeignKey, TIMESTAMP
 
 from src.products.entities.product import Product
-    
-# Implementación con SQL Alchemy para el repositorio de libros.
 
 class SQLAlchemyProductsRepository():
 
     def __init__(self, sqlalchemy_client, test = False):
-
-        # Mapear la tabla product de forma imperativa.
-        # Si "test" es true, se le agrega un sufijo al nombre de la tabla,
-        # para que las pruebas de integración no sobreescriban los datos existentes.
 
         self.client = sqlalchemy_client
         self.session_factory = sqlalchemy_client.session_factory
@@ -60,9 +54,6 @@ class SQLAlchemyProductsRepository():
             return product
 
     def update_product(self, id, fields):
-
-        # Actualiza sólo los campos de la lista "fields" en el libro especificado.
-        # Luego retorna el libro con los nuevos datos.
         
         with self.session_factory() as session:
 

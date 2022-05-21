@@ -4,18 +4,6 @@ from enviame.inputvalidation import validate_schema_flask, SUCCESS_CODE, FAIL_CO
 
 from src.users.http.validation import user_validatable_fields
 
-# Endpoints para CRUD de tiendas.
-
-# Sólo se encarga de recibir las llamadas HTTP y le entrega los datos
-# relevantes a los casos de uso correspondientes. Esta capa no debe
-# contener lógica de negocio, sólo lo necesario para recibir y entregar
-# respuestas válidas al mundo exterior.
-
-# Se realiza la validación de datos de entrada mediante el decorador 
-# "@validate_schema_flask", el cual recibe como argumento un diccionario definido
-# en el archivo "user_validatable_fields". No sólo valida que todos los campos
-# requeridos vengan en el payload, sino que también que no vengan campos de más.
-
 def create_users_blueprint(manage_users_usecase):
 
     blueprint = Blueprint("users", __name__)

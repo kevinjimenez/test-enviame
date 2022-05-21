@@ -1,11 +1,6 @@
 from src.users.entities.user import User
 from src.utils import utils
 
-# Casos de uso para el manejo de libros.
-
-# Recibe en el constructor el repositorio a utilizar. Da igual si recibe el repositorio
-# de SQL o de Fireuser, el caso de uso debe funcionar independientemente de su implementación.
-
 class ManageUsersUsecase:
 
     def __init__(self, users_repository):
@@ -13,20 +8,14 @@ class ManageUsersUsecase:
 
     def get_users(self):
 
-        # Retorna una lista de entidades user desde el repositorio.
-
         return self.users_repository.get_users()
 
     def get_user(self, user_id):
-
-        # Retorna una instancia de user según la ID recibida.
 
         return self.users_repository.get_user(user_id)
 
     def create_user(self, data):
 
-        # Crea una instancia user desde la data recibida, que ya debe venir validada desde afuera,
-        # y guarda dicha instancia en el repositorio para finalmente retornarla.        
         current_time = utils.get_current_datetime()
         
         data["created_at"] = current_time
@@ -38,10 +27,6 @@ class ManageUsersUsecase:
         return user
 
     def update_user(self, user_id, data):
-
-        # Actualiza los datos recibidos y los guarda en el repositorio según la ID recibida.
-        # La data no necesariamente debe contener todos los campos de la entidad, sólo
-        # los campos que se van a actualizar. Esta data debe venir validada desde afuera.
 
         user = self.get_user(user_id)
 
@@ -56,9 +41,6 @@ class ManageUsersUsecase:
             raise ValueError(f"user of ID {user_id} doesn't exist.")
 
     def delete_user(self, user_id):
-
-        # Realiza un soft-delete del libro con la ID especificada, si es que existe.
-        # A nivel de repositorio realiza una actualización al campo "deleted_at".
 
         user = self.get_user(user_id)
 

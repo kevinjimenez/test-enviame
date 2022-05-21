@@ -4,18 +4,6 @@ from enviame.inputvalidation import validate_schema_flask, SUCCESS_CODE, FAIL_CO
 
 from src.products.http.validation import product_validatable_fields
 
-# Endpoints para CRUD de tiendas.
-
-# Sólo se encarga de recibir las llamadas HTTP y le entrega los datos
-# relevantes a los casos de uso correspondientes. Esta capa no debe
-# contener lógica de negocio, sólo lo necesario para recibir y entregar
-# respuestas válidas al mundo exterior.
-
-# Se realiza la validación de datos de entrada mediante el decorador 
-# "@validate_schema_flask", el cual recibe como argumento un diccionario definido
-# en el archivo "product_validatable_fields". No sólo valida que todos los campos
-# requeridos vengan en el payload, sino que también que no vengan campos de más.
-
 def create_products_blueprint(manage_products_usecase):
 
     blueprint = Blueprint("products", __name__)
