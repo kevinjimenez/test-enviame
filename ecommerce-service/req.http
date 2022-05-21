@@ -1,0 +1,130 @@
+### tiendas.
+GET http://localhost:8000/stores
+
+### Obtener tienda por ID.
+GET http://localhost:8000/stores/1
+
+### Crear tienda.
+POST http://localhost:8000/stores
+Content-Type: application/json
+
+{
+    "name": "comicom",
+    "description": "venta de comics",
+    "user": "1",
+    "address": "hahahah"
+    
+}
+
+### Actualizar tienda.
+PUT http://localhost:8000/stores/1
+Content-Type: application/json
+
+{
+    "name": "Mi nuevo libro (edición 2)",
+    "description": "Hans A.C.",
+    "user": "110"
+}
+
+### Borrar tienda.
+DELETE http://localhost:8000/stores/2
+
+
+
+##########################  Roles
+
+
+### Obtener todos las usuarios.
+GET http://localhost:8000/roles
+
+### Obtener usuario por ID.
+GET http://localhost:8000/roles/1
+
+### Crear usuario.
+POST http://localhost:8000/roles
+Content-Type: application/json
+
+{
+    "name": "Admin",
+    "description": "usuario de tienda"
+}
+
+### Actualizar tienda.
+PUT http://localhost:8000/roles/1
+Content-Type: application/json
+
+{
+    "name": "Tienda",
+    "description": ""
+}
+
+### Borrar tienda.
+DELETE http://localhost:8000/roles/1
+
+
+##########################  products
+
+
+### Obtener todos las usuarios.
+GET http://localhost:8000/products
+
+### Obtener usuario por ID.
+GET http://localhost:8000/products/1
+
+### Crear usuario.
+POST http://localhost:8000/products
+Content-Type: application/json
+
+{
+    "name": "Mi nuevo libro",
+    "description": "Hans A.C.",
+    "quantity": 100
+}
+
+### Actualizar tienda.
+PUT http://localhost:8000/products/1
+Content-Type: application/json
+
+{
+    "name": "Kevin",    
+    "password": "123445678",
+    "role": "tienda"
+}
+
+### Borrar tienda.
+DELETE http://localhost:8000/products/1
+
+
+##########################  Users
+
+
+### Obtener todos las usuarios.
+GET http://localhost:8000/users
+
+### Obtener usuario por ID.
+GET http://localhost:8000/users/1
+
+### Crear usuario.
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "name": "Mi nuevo libro",
+    "email": "Hans A.C.",
+    "shipping_addres": "100",
+    "role": "1"
+}
+
+### Actualizar tienda.
+PUT http://localhost:8000/users/1
+Content-Type: application/json
+
+{
+    "name": "Mi nuevo libro",
+    "email": "Hans A.C.",
+    "shipping_addres": "100",
+    "role": "1"
+}
+
+### Borrar tienda.
+DELETE http://localhost:8000/users/1
